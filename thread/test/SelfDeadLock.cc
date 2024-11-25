@@ -5,13 +5,13 @@
 class Request
 {
  public:
-  void process() // __attribute__ ((noinline))
+  void process()  __attribute__ ((noinline))
   {
     muduo::MutexLockGuard lock(mutex_);
     // print();
   }
 
-  void print() const // __attribute__ ((noinline))
+  void print() const  __attribute__ ((noinline))
   {
     muduo::MutexLockGuard lock(mutex_);
   }
@@ -25,4 +25,5 @@ int main()
   Request req;
   req.process();
   std::cout << "kkk main" << std::endl;
+  return -1;
 }
