@@ -8,12 +8,13 @@ class Request
   void process()  __attribute__ ((noinline))
   {
     muduo::MutexLockGuard lock(mutex_);
-    // print();
+    print();
   }
 
   void print() const  __attribute__ ((noinline))
   {
-    muduo::MutexLockGuard lock(mutex_);
+    // muduo::MutexLockGuard lock(mutex_);
+    std::cout << "test gdb kkk" << std::endl;
   }
 
  private:
