@@ -1,4 +1,6 @@
 #include "../Mutex.h"
+#include <muduo/base/CurrentThread.h>
+#include <iostream>
 
 class Request
 {
@@ -6,7 +8,7 @@ class Request
   void process() // __attribute__ ((noinline))
   {
     muduo::MutexLockGuard lock(mutex_);
-    print();
+    // print();
   }
 
   void print() const // __attribute__ ((noinline))
@@ -22,4 +24,5 @@ int main()
 {
   Request req;
   req.process();
+  std::cout << "kkk main" << std::endl;
 }
